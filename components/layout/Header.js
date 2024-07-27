@@ -2,10 +2,12 @@ import React from "react";
 
 //component-module
 import SearchBar from "../module/SearchBar";
+import Link from "next/link";
+import UserNav from "../module/UserNav";
 
 function Header() {
   return (
-    <div className="max-w-[1415px] mx-auto">
+    <div className="max-w-[1415px] mx-auto relative">
       <div className="flex justify-center relative">
         <img
           className="w-[1415px] h-[120px]"
@@ -16,10 +18,12 @@ function Header() {
 
       <div className="absolute top-0 flex justify-between w-full items-center mt-5">
         <div>
-          <img
-            src="/images/logo.png"
-            className="cursor-pointer w-[90px] mr-6 object-cover"
-          />
+          <Link href={"/"}>
+            <img
+              src="/images/logo.png"
+              className="cursor-pointer w-[90px] mr-6 object-cover"
+            />
+          </Link>
         </div>
 
         <div>
@@ -32,6 +36,10 @@ function Header() {
       <div className="flex justify-center mt-[-3.7rem]">
         <SearchBar />
       </div>
+
+      <main className="fixed bottom-0 right-0 left-0 z-50">
+        <UserNav />
+      </main>
     </div>
   );
 }
