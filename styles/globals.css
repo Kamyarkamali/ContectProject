@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: "yekanbakh";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("/my-app/public/font/YekanBakh-Medium.ttf") format("ttf");
-  }
+@font-face {
+  font-family: yekanbakh;
+  src: url("/my-app/public/fonts/woff/YekanBakhFaNum-Regular.woff");
 }
 
-body {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;

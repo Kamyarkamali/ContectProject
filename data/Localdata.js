@@ -16,11 +16,16 @@ export const services = [
 ];
 
 export const userNav = [
-  { id: 1, title: "خانه", image: "/icon/home.png" },
-  { id: 2, title: "آگهی ها", image: "/icon/agahi.png" },
-  { id: 3, title: "دسته بندی", image: "/icon/category.png" },
-  { id: 4, title: "کیف پول", image: "/icon/wallet.png" },
-  { id: 5, title: "حساب", image: "/icon/user.png" },
+  { id: 1, title: "خانه", image: "/icon/home.png", paths: "/" },
+  { id: 2, title: "آگهی ها", image: "/icon/agahi.png", paths: "/" },
+  {
+    id: 3,
+    title: "دسته بندی",
+    image: "/icon/category.png",
+    paths: "/categortys",
+  },
+  { id: 4, title: "کیف پول", image: "/icon/wallet.png", paths: "/" },
+  { id: 5, title: "حساب", image: "/icon/user.png", paths: "/" },
 ];
 
 export const servicesImages = [

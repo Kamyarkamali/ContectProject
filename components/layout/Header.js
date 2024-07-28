@@ -4,8 +4,31 @@ import React from "react";
 import SearchBar from "../module/SearchBar";
 import Link from "next/link";
 import UserNav from "../module/UserNav";
+import { useRouter } from "next/router";
 
 function Header() {
+  const { pathname } = useRouter();
+
+  const router = useRouter();
+
+  // بررسی مسیر و انتخاب تصاویر بر اساس آن
+  const headerImageSrc =
+    pathname === "/categortys/detailseCategory"
+      ? "/images/other-image.jpg"
+      : "/images/image.jpg";
+  const logoImageSrc =
+    pathname === "/categortys/detailseCategory"
+      ? "/icon/arrowleft.png"
+      : "/images/logo.png";
+  const headsetImageSrc =
+    pathname === "/categortys/detailseCategory"
+      ? "/icon/arrowleft.png"
+      : "/images/Headset.png";
+
+  const backHandeler = () => {
+    router.push("/");
+  };
+
   return (
     <div className="max-w-[1415px] mx-auto relative">
       <div className="flex justify-center relative">
@@ -20,20 +43,30 @@ function Header() {
         <div>
           <Link href={"/"}>
             <img
-              src="/images/logo.png"
+              src={"/images/logo.png"}
               className="cursor-pointer w-[90px] mr-6 object-cover"
             />
           </Link>
         </div>
 
-        <div>
+        <div
+          className={`${
+            headsetImageSrc &&
+            "h-[40px] flex flex-col items-center justify-center ml-4 rounded-[100%]"
+          }`}
+        >
           <img
-            src="/images/Headset.png"
-            className="cursor-pointer w-[50px] ml-6 object-cover"
+            src={headsetImageSrc}
+            onClick={backHandeler}
+            className={`cursor-pointer`}
           />
         </div>
       </div>
-      <div className="flex justify-center mt-[-3.7rem]">
+      <div
+        className={`flex justify-center mt-[-3.5rem] ${
+          pathname === "/categortys/detailseCategory" ? "hidden" : "block"
+        }`}
+      >
         <SearchBar />
       </div>
 
