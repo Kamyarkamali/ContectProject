@@ -10,7 +10,7 @@ function UserNav() {
         {userNav.map((item) => (
           <div key={item.id} className="flex  flex-col items-center">
             <img src={item.image} className="w-[24px]" />
-            <p className="font-bold text-sm text-gray-600 mt-1">{item.title}</p>
+            <p className="text-sm text-gray-600 mt-1">{item.title}</p>
           </div>
         ))}
       </div>
