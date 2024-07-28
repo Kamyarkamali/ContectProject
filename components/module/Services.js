@@ -7,7 +7,7 @@ function Services() {
     <div className="mt-[1rem] max-w-[330px] mx-auto">
       <div className="grid  grid-cols-4 gap-7">
         {services.map((item) => (
-          <Link href={item.paths}>
+          <Link key={item.id} href={item.paths}>
             <img
               src={item.images}
               alt="services"

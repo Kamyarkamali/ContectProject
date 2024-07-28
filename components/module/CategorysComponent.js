@@ -11,7 +11,12 @@ function CategorysComponent() {
           </h1>
           <div className="flex items-center gap-3 w-[370px] justify-center">
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "بیمه خودرو" },
+                }}
+              >
                 <img
                   src="/images/img2.png"
                   className="w-[140px] rounded-lg object-cover"
@@ -20,7 +25,12 @@ function CategorysComponent() {
               <p className="text-sm mt-1 font-bold">بیمه خودرو</p>
             </div>
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "نرم افزار" },
+                }}
+              >
                 <img
                   src="/images/img1.png"
                   className="w-[140px] rounded-lg object-cover"
@@ -39,7 +49,12 @@ function CategorysComponent() {
           </h1>
           <div className="flex items-center gap-1 w-[350px] justify-center">
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "قبوض" },
+                }}
+              >
                 <img
                   src="/images/img2.png"
                   className="w-[140px] rounded-lg object-cover"
@@ -48,7 +63,12 @@ function CategorysComponent() {
               <p className="text-sm mt-1 font-bold">قبوض</p>
             </div>
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "ابلاغیه" },
+                }}
+              >
                 <img
                   src="/images/img1.png"
                   className="w-[140px] rounded-lg object-cover"
@@ -57,7 +77,12 @@ function CategorysComponent() {
               <p className="text-sm mt-1 font-bold">ابلاغیه</p>
             </div>
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "سایر" },
+                }}
+              >
                 <img
                   src="/images/img1.png"
                   className="w-[140px] rounded-lg object-cover"
@@ -76,25 +101,40 @@ function CategorysComponent() {
           </h1>
           <div className="flex items-center gap-1 w-[350px] justify-center">
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "تایپ" },
+                }}
+              >
                 <img
                   src="/images/img2.png"
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">قبوض</p>
+              <p className="text-sm mt-1 font-bold">تایپ</p>
             </div>
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "جزوه" },
+                }}
+              >
                 <img
                   src="/images/img1.png"
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">ابلاغیه</p>
+              <p className="text-sm mt-1 font-bold">جزوه</p>
             </div>
             <div className="flex flex-col items-center">
-              <Link href={"/categortys/detailseCategory"}>
+              <Link
+                href={{
+                  pathname: "/categortys/detailseCategory",
+                  query: { title: "سایر" },
+                }}
+              >
                 <img
                   src="/images/img1.png"
                   className="w-[140px] rounded-lg object-cover"

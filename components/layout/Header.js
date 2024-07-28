@@ -11,22 +11,24 @@ function Header() {
 
   const router = useRouter();
 
+  const { title } = router.query;
+
+  console.log(title);
+
   // بررسی مسیر و انتخاب تصاویر بر اساس آن
   const headerImageSrc =
     pathname === "/categortys/detailseCategory"
       ? "/images/other-image.jpg"
       : "/images/image.jpg";
   const logoImageSrc =
-    pathname === "/categortys/detailseCategory"
-      ? "/icon/arrowleft.png"
-      : "/images/logo.png";
+    pathname === "/categortys/detailseCategory" ? title : "/images/logo.png";
   const headsetImageSrc =
     pathname === "/categortys/detailseCategory"
       ? "/icon/arrowleft.png"
       : "/images/Headset.png";
 
   const backHandeler = () => {
-    router.push("/");
+    router.back();
   };
 
   return (
@@ -44,8 +46,17 @@ function Header() {
           <Link href={"/"}>
             <img
               src={"/images/logo.png"}
-              className="cursor-pointer w-[90px] mr-6 object-cover"
+              className={`cursor-pointer w-[90px] mr-6 object-cover ${
+                title ? "hidden" : "block"
+              }`}
             />
+            <p
+              className={`mr-4 text-[19px] font-bold ${
+                title ? "block" : "hidden"
+              }`}
+            >
+              {title}
+            </p>
           </Link>
         </div>
 
