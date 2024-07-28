@@ -1,6 +1,7 @@
 import React from "react";
 
 import SliderDiscount from "@/components/module/SliderDiscount";
+import Link from "next/link";
 
 function Discountcomponent() {
   return (
@@ -10,7 +11,9 @@ function Discountcomponent() {
         <span className="mt-9 text-white text-xl font-bold">
           نیازت همراه با تخفیف
         </span>
-        <img className="mt-9" src="/images/iconright.png" />
+        <Link href={"/discount"}>
+          <img className="mt-9" src="/images/iconright.png" />
+        </Link>
       </div>
 
       <div className="flex justify-center">

@@ -1,8 +1,9 @@
-import React from "react";
+//component-module
 import Slider from "../module/Slider";
 import Services from "../module/Services";
 import HeroSection from "../module/HeroSection";
 import Discountcomponent from "../module/Discountcomponent";
+import MultiServicesComponent from "../module/MultiServicesComponent";
 
 function HomePage() {
   return (
@@ -11,6 +12,7 @@ function HomePage() {
       <Services />
       <HeroSection />
       <Discountcomponent />
+      <MultiServicesComponent />
     </div>
   );
 }

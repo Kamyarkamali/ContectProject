@@ -18,3 +18,30 @@ body {
   box-sizing: border-box;
   font-family: yekanbakh;
 }
+
+/* استایل برای نوار پیشرفت */
+progress[value] {
+  /* حذف استایل پیش‌فرض */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 5px; /* ارتفاع دلخواه */
+  direction: ltr; /* اطمینان از اینکه جهت از چپ به راست است */
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee; /* رنگ پس‌زمینه */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: red; /* رنگ نوار پیشرفت */
+  border-radius: 10px 0 0 10px;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: red; /* رنگ نوار پیشرفت */
+  border-radius: 10px 0 0 10px;
+}
