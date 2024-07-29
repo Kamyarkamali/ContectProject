@@ -17,7 +17,7 @@ export const services = [
 
 export const userNav = [
   { id: 1, title: "خانه", image: "/icon/home.png", paths: "/" },
-  { id: 2, title: "آگهی ها", image: "/icon/agahi.png", paths: "/" },
+  { id: 2, title: "آگهی ها", image: "/icon/agahi.png", paths: "/advertising" },
   {
     id: 3,
     title: "دسته بندی",
