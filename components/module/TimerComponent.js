@@ -23,8 +23,8 @@ const App = () => {
   endDate.setHours(endDate.getHours() + 100);
 
   return (
-    <div className="flex items-center justify-center w-[195px] text-red-600 text-[10px]">
-      <h1 className="text-center">زمان باقی‌مانده :</h1>
+    <div className="flex items-center justify-between w-[195px] text-red-600 text-[10px] mt-1">
+      <img src="/images/oclock.png" />
       <Countdown date={endDate} renderer={renderer} />
     </div>
   );

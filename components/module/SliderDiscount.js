@@ -41,7 +41,7 @@ export default function App() {
                   20%
                 </span>
               </div>
-              <p className="absolute text-[13px] mt-5 text-white">
+              <p className="absolute text-[11px]  mt-5 text-white">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
               </p>
 
@@ -71,7 +71,7 @@ export default function App() {
                   20%
                 </span>
               </div>
-              <p className="absolute text-[13px] mt-5 text-white">
+              <p className="absolute text-[11px]  mt-5 text-white">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
               </p>
 
@@ -101,7 +101,7 @@ export default function App() {
                   20%
                 </span>
               </div>
-              <p className="absolute text-[13px] mt-5 text-white">
+              <p className="absolute text-[11px] mt-5 text-white">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
               </p>
 

@@ -11,7 +11,7 @@ function SearchBar() {
 
   return (
     <div className="z-30 mr-2">
-      <div className="bg-white flex lg:w-[380px] w-[340px] gap-2 justify-center rounded-lg p-3 mt-3 border-[1px] border-gray-400  items-center">
+      <div className="bg-white flex lg:w-[380px] w-[340px] gap-2 justify-center rounded-lg p-3 mt-9 border-[1px] border-gray-400  items-center">
         <img
           onClick={serachHandeler}
           className="cursor-pointer"

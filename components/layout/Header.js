@@ -35,7 +35,7 @@ function Header() {
     <div className="max-w-[1415px] mx-auto relative">
       <div className="flex justify-center relative">
         <img
-          className="w-[1415px] h-[120px]"
+          className="w-[1415px] h-[100px]"
           src={"/images/image.jpg"}
           alt="header"
         />
