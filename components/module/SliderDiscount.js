@@ -36,8 +36,8 @@ export default function App() {
                 <img src="/images/car.png" className="object-cover w-[200px]" />
               </Link>
               <div className="flex justify-between items-center">
-                <span className="text-white">بیمه خودرو</span>
-                <span className="bg-red-600 flex justify-center text-sm p-1 w-[50px] text-white font-bold rounded-2xl">
+                <span className="text-white mr-3">بیمه خودرو</span>
+                <span className="bg-red-600 ml-3 mt-1 flex justify-center text-sm p-1 w-[50px] text-white font-bold rounded-2xl">
                   20%
                 </span>
               </div>
@@ -66,8 +66,8 @@ export default function App() {
                 <img src="/images/car.png" className="object-cover w-[200px]" />
               </Link>
               <div className="flex justify-between items-center">
-                <span className="text-white">بیمه خودرو</span>
-                <span className="bg-red-600 flex justify-center text-sm p-1 w-[50px] text-white font-bold rounded-2xl">
+                <span className="text-white mr-3">بیمه خودرو</span>
+                <span className="bg-red-600 ml-3 mt-1 flex justify-center text-sm p-1 w-[50px] text-white font-bold rounded-2xl">
                   20%
                 </span>
               </div>
@@ -96,8 +96,8 @@ export default function App() {
                 <img src="/images/car.png" className="object-cover w-[200px]" />
               </Link>
               <div className="flex justify-between items-center">
-                <span className="text-white">بیمه خودرو</span>
-                <span className="bg-red-600 flex justify-center text-sm p-1 w-[50px] text-white font-bold rounded-2xl">
+                <span className="text-white mr-3">بیمه خودرو</span>
+                <span className="bg-red-600 ml-3 mt-1 flex justify-center text-sm p-1 w-[50px] text-white font-bold rounded-2xl">
                   20%
                 </span>
               </div>
