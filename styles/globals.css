@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: yekanbakh;
-  src: url("/my-app/public/fonts/woff/YekanBakhFaNum-Regular.woff");
+  src: url("/my-app/public/fonts/woff2/YekanBakhFaNum-Bold.woff2");
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: yekanbakh;
+  /* font-family: yekanbakh; */
 }
 
 /* استایل برای نوار پیشرفت */

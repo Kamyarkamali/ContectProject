@@ -18,6 +18,8 @@ export default function App() {
   return (
     <div className="mt-3">
       <Swiper
+        spaceBetween={10}
+        slidesPerView={2}
         autoplay={true}
         loop={true}
         pagination={{
@@ -28,7 +30,7 @@ export default function App() {
       >
         <SwiperSlide>
           <div className="flex justify-center relative">
-            <img src="/images/background.png" />
+            <img src="/images/framerbg.jpg" className="rounded-lg h-[320px]" />
             <div className="absolute top-6">
               <Link href={"/discount"}>
                 <img src="/images/car.png" className="object-cover w-[200px]" />
@@ -58,7 +60,7 @@ export default function App() {
 
         <SwiperSlide>
           <div className="flex justify-center relative">
-            <img src="/images/background.png" />
+            <img src="/images/framerbg.jpg" className="rounded-lg h-[320px]" />
             <div className="absolute top-6">
               <Link href={"/discount"}>
                 <img src="/images/car.png" className="object-cover w-[200px]" />
@@ -88,7 +90,7 @@ export default function App() {
 
         <SwiperSlide>
           <div className="flex justify-center relative">
-            <img src="/images/background.png" />
+            <img src="/images/framerbg.jpg" className="rounded-lg h-[320px]" />
             <div className="absolute top-6">
               <Link href={"/discount"}>
                 <img src="/images/car.png" className="object-cover w-[200px]" />
@@ -119,7 +121,7 @@ export default function App() {
 
       <div className="flex gap-3 items-center cursor-pointer mt-3 justify-center">
         <p className="text-white font-bold">مشاهده همه</p>
-        <img src="/icon/left.png" />
+        <img src="/images/left.png" />
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ function Header() {
               }`}
             />
             <p
-              className={`mr-4 text-[19px] font-bold ${
+              className={`mr-4 text-[17px] text-gray-700 font-bold ${
                 title ? "block" : "hidden"
               }`}
             >

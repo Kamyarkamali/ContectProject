@@ -23,8 +23,8 @@ const App = () => {
   endDate.setHours(endDate.getHours() + 100);
 
   return (
-    <div className="flex items-center justify-center text-red-600 text-[11px]">
-      <h1>زمان باقی‌مانده :</h1>
+    <div className="flex items-center justify-center w-[195px] text-red-600 text-[10px]">
+      <h1 className="text-center">زمان باقی‌مانده :</h1>
       <Countdown date={endDate} renderer={renderer} />
     </div>
   );
