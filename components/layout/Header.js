@@ -27,15 +27,30 @@ function Header() {
       ? "/icon/arrowleft.png"
       : "/images/Headset.png";
 
+  const req = "/advertising/sendrequest";
+
+  const urlProductPrice = "/produtcPrice";
+
   const backHandeler = () => {
     router.back();
   };
 
   return (
-    <div className="max-w-[1415px] mx-auto relative">
+    <div className="max-w-[1415px]  mx-auto relative">
       <div className="flex justify-center relative">
         <img
-          className="w-[1415px] h-[100px]"
+          className={`w-[1415px] h-[100px] ${
+            pathname === "/userPanele" && "h-[190px]"
+          } ${
+            pathname === "/produtcPrice" ||
+            pathname === "/fainalprice" ||
+            pathname === "/conversation" ||
+            pathname === "/opening" ||
+            pathname === "/opening/checkbox" ||
+            pathname === "/opening/login"
+              ? "hidden"
+              : "block"
+          }`}
           src={"/images/image.jpg"}
           alt="header"
         />
@@ -47,8 +62,16 @@ function Header() {
             <img
               src={"/images/logo.png"}
               className={`cursor-pointer w-[90px] mr-6 object-cover ${
-                title ? "hidden" : "block"
-              }`}
+                pathname === "/produtcPrice" ||
+                pathname === "/fainalprice" ||
+                pathname === "/conversation" ||
+                pathname === "/opening" ||
+                pathname === "/opening/checkbox" ||
+                pathname === "/opening/login" ||
+                pathname === "/userPanele"
+                  ? "hidden"
+                  : "block"
+              } ${title ? "hidden" : "block"}`}
             />
             <p
               className={`mr-4 text-[17px] text-gray-700 font-bold ${
@@ -69,19 +92,40 @@ function Header() {
           <img
             src={headsetImageSrc}
             onClick={backHandeler}
-            className={`cursor-pointer`}
+            className={`cursor-pointer ${
+              pathname === "/produtcPrice" ||
+              pathname === "/fainalprice" ||
+              pathname === "/conversation" ||
+              pathname === "/opening" ||
+              pathname == "/opening/checkbox" ||
+              pathname === "/opening/login" ||
+              pathname === "/userPanele"
+                ? "hidden"
+                : "block"
+            }`}
           />
         </div>
       </div>
       <div
         className={`flex justify-center mt-[-3.5rem] ${
-          pathname === "/categortys/detailseCategory" ? "hidden" : "block"
+          pathname === "/categortys/detailseCategory" || req
+            ? "hidden"
+            : "block"
         }`}
       >
         <SearchBar />
       </div>
 
-      <main className="fixed bottom-0 right-0 left-0 z-50">
+      <main
+        className={`fixed bottom-0 right-0 left-0 z-50 ${
+          pathname === "/conversation" ||
+          pathname === "/opening/login" ||
+          pathname === "/opening" ||
+          pathname === "/opening/checkbox"
+            ? "hidden"
+            : "block"
+        }`}
+      >
         <UserNav />
       </main>
     </div>

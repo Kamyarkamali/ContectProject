@@ -25,7 +25,7 @@ export const userNav = [
     paths: "/categortys",
   },
   { id: 4, title: "کیف پول", image: "/icon/wallet.png", paths: "/" },
-  { id: 5, title: "حساب", image: "/icon/user.png", paths: "/" },
+  { id: 5, title: "حساب", image: "/icon/user.png", paths: "/opening" },
 ];
 
 export const servicesImages = [
@@ -39,4 +39,37 @@ export const servicesImages = [
   { id: 8, images: "/servicesimage/8.png" },
   { id: 9, images: "/servicesimage/9.png" },
   { id: 10, images: "/servicesimage/10.png" },
+];
+
+export const menuPop = [
+  { id: 1, title: "خدمات منزل", image: "/iconpop/1.png" },
+  { id: 2, title: "اینترنتی", image: "/iconpop/2.png" },
+  { id: 3, title: "جزوه", image: "/iconpop/3.png" },
+  { id: 4, title: "بیمه خودرو", image: "/iconpop/4.png" },
+  { id: 5, title: "خرید بلیط", image: "/iconpop/5.png" },
+  { id: 6, title: "قبوض", image: "/iconpop/6.png" },
+  { id: 7, title: "نرم افزار", image: "/iconpop/7.png" },
+  { id: 8, title: "مرسوله", image: "/iconpop/8.png" },
+  { id: 9, title: "تایپ", image: "/iconpop/9.png" },
+  { id: 10, title: "ترجمه", image: "/iconpop/10.png" },
+  { id: 11, title: "ابلاغیه", image: "/iconpop/11.png" },
+  { id: 12, title: "تحقیق", image: "/iconpop/12.png" },
+  { id: 13, title: "سایر", image: "/iconpop/13.png" },
+  { id: 14, title: "سایر", image: "/iconpop/14.png" },
+  { id: 15, title: "چک", image: "/iconpop/15.png" },
+  { id: 16, title: "ثنا", image: "/iconpop/16.png" },
+];
+
+export const menuUser = [
+  { id: 1, title: "اطلاعات حساب", image: "/iconuseraccount/1.png", paths: "/" },
+  { id: 2, title: "آدرس ها", image: "/iconuseraccount/2.png", paths: "/" },
+  { id: 3, title: "نظرات شما", image: "/iconuseraccount/3.png", paths: "/" },
+  { id: 4, title: "دعوت دوستان", image: "/iconuseraccount/4.png", paths: "/" },
+  { id: 5, title: "پشتیبانی", image: "/iconuseraccount/5.png", paths: "/" },
+  {
+    id: 6,
+    title: "تنظیمات",
+    image: "/iconuseraccount/6.png",
+    paths: "/userPanele/settings",
+  },
 ];
