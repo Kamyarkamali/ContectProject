@@ -24,13 +24,14 @@ function NewAdvertising() {
   };
 
   return (
-    <div className="w-[333px] rounded-lg mt-6 p-4 bg-[#EFEFEF]">
+    <div className="w-[333px] rounded-lg mt-6 p-4 bg-[#EFEFEF] dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
       <div className="flex items-center justify-around text-sm">
         <Link href={"/advertising"}>
           <h2
             onClick={clickHandeler2}
             className={`rounded-lg  cursor-pointer p-2 w-[140px] flex justify-center ${
-              active && "bg-white"
+              active &&
+              "bg-white dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in"
             }`}
           >
             آگهی جدید
@@ -40,7 +41,8 @@ function NewAdvertising() {
           <h2
             onClick={clickHandeler}
             className={`rounded-lg cursor-pointer  p-2 w-[140px] flex justify-center ${
-              !active && "bg-white"
+              !active &&
+              "bg-white dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in"
             }`}
           >
             آگهی های گذشته

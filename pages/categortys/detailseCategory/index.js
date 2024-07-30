@@ -1,13 +1,9 @@
 import { sp } from "@/helpers/replaceNumber";
-import { useRouter } from "next/router";
 import React from "react";
 
 function CategoryDetailse() {
-  const router = useRouter();
-  const { title } = router.query;
-
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
       <div className="mt-4">
         <img src="/images/banner4.jpg" className="w-[400px] rounded-lg" />
       </div>

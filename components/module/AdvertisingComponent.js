@@ -5,7 +5,7 @@ import Button from "../element/Button";
 
 function AdvertisingComponent() {
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="flex flex-col items-center relative dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
       <div>
         <NewAdvertising />
       </div>

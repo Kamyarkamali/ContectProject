@@ -5,7 +5,7 @@ function CategorysComponent() {
   return (
     <div>
       <div>
-        <div className="flex flex-col items-center mt-[2rem]">
+        <div className="flex flex-col items-center py-7 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             محبوب ترین خدمات
           </h1>
@@ -43,7 +43,7 @@ function CategorysComponent() {
       </div>
 
       <div>
-        <div className="flex flex-col items-center mt-[2rem] ">
+        <div className="flex flex-col items-center py-10 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in ">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             خدمات اینترنتی
           </h1>
@@ -95,7 +95,7 @@ function CategorysComponent() {
       </div>
 
       <div>
-        <div className="flex flex-col items-center mt-[2rem] mb-[4rem] ">
+        <div className="flex flex-col items-center py-10 mb-[4rem] dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in ">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             خدمات تحقیقی
           </h1>

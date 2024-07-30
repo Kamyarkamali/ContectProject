@@ -3,7 +3,7 @@ import UserMenu from "./UserMenu";
 
 function UserPanelcomponent() {
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="flex flex-col items-center relative  dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
       <div className="absolute top-[-11rem] left-0 right-0 flex flex-col items-center">
         <img src="/images/useravatar.png" className="w-[120px] " />
         <p className="font-bold">رضا احمدی</p>

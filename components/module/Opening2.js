@@ -2,7 +2,7 @@ import React from "react";
 
 function Opening2({ setstep }) {
   return (
-    <div className="flex flex-col items-center mt-9">
+    <div className="flex flex-col items-center py-10  dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
       <div className="flex flex-col items-center gap-4">
         <img src="/icon/logo2.png" className="w-[140px]" />
         <img src="/images/opening2.png" className="w-[300px] mb-8" />

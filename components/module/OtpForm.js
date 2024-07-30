@@ -51,10 +51,10 @@ function OtpForm() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-7">
+    <div className="flex flex-col items-center py-10  dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
       <div className="flex flex-col gap-3 items-center">
         <h2 className="font-bold text-xl">کد تایید به شماره شما ارسال شد</h2>
-        <p className="text-sm w-[280px] text-center leading-6 text-gray-700">
+        <p className="text-sm w-[280px] text-center leading-6">
           یک کد تایید چهار رقمی به شماره تلفن شما ارسال شده است، لطفا کد تایید
           را وارد کنید
         </p>
@@ -73,7 +73,7 @@ function OtpForm() {
             value={otp[3 - index]} // Reverse the order of values
             onChange={(e) => handleChange(e, 3 - index)}
             onKeyDown={(e) => handleKeyDown(e, 3 - index)}
-            className="w-[80px] h-[80px] text-center outline-none text-lg border border-gray-400 rounded"
+            className="w-[80px] text-gray-500 font-bold h-[80px] text-center outline-none text-lg border border-gray-400 rounded"
           />
         ))}
       </div>
@@ -100,6 +100,8 @@ function OtpForm() {
           برگشت
         </button>
       </div>
+
+      <div className="mb-[8.1rem]"></div>
     </div>
   );
 }

@@ -12,7 +12,7 @@ import { slider } from "@/data/Localdata";
 
 function Slider() {
   return (
-    <div className="mt-[1rem] max-w-[340px] mx-auto">
+    <div className="max-w-[340px] mx-auto py-4">
       <Swiper
         autoplay={true}
         loop={true}

@@ -6,7 +6,7 @@ function UserNav() {
   const [selected, setSelected] = useState(1);
 
   return (
-    <div className="bg-[#FFFF] p-3 shadow-md border-t-2">
+    <div className="bg-[#FFFF] p-3 shadow-md border-t-2 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
       <div className="flex justify-around">
         {userNav.map((item) => (
           <div
@@ -17,18 +17,15 @@ function UserNav() {
             <Link href={item.paths}>
               <img
                 src={item.image}
-                className="w-[24px]"
-                style={{
-                  filter:
-                    selected === item.id
-                      ? "brightness(0) saturate(100%) invert(39%) sepia(100%) saturate(2301%) hue-rotate(358deg) brightness(106%) contrast(101%)"
-                      : "none",
-                }}
+                className={`w-[24px] filter-default ${
+                  selected === item.id ? "filter-active" : "dark:filter-white"
+                }`}
+                alt={item.title}
               />
             </Link>
             <p
               className={`text-sm mt-1 ${
-                selected === item.id ? "text-orange-500" : "text-gray-600"
+                selected === item.id && "text-orange-500"
               }`}
             >
               {item.title}
