@@ -25,7 +25,7 @@ function SettingsComponent() {
   };
 
   return (
-    <div className="flex flex-col gap-4 items-center py-7 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="flex flex-col gap-4 items-center py-7">
       <div className="flex items-center justify-between w-full">
         <div className="flex items-center mr-5">
           <div>

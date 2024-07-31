@@ -95,7 +95,7 @@ function CategorysComponent() {
       </div>
 
       <div>
-        <div className="flex flex-col items-center py-10 mb-[4rem] dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in ">
+        <div className="flex flex-col items-center py-10 mb-[4rem]">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             خدمات تحقیقی
           </h1>

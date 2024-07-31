@@ -6,7 +6,7 @@ function UserNav() {
   const [selected, setSelected] = useState(1);
 
   return (
-    <div className="bg-[#FFFF] p-3 shadow-md border-t-2 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="bg-[#FFFF] p-3 shadow-md border-t-2">
       <div className="flex justify-around">
         {userNav.map((item) => (
           <div

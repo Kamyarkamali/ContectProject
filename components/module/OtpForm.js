@@ -51,7 +51,7 @@ function OtpForm() {
   };
 
   return (
-    <div className="flex flex-col items-center py-10  dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="flex flex-col items-center py-10">
       <div className="flex flex-col gap-3 items-center">
         <h2 className="font-bold text-xl">کد تایید به شماره شما ارسال شد</h2>
         <p className="text-sm w-[280px] text-center leading-6">

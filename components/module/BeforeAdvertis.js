@@ -9,12 +9,12 @@ function BeforeAdvertisComponents() {
   const [progressNumber, setProgressNumber] = useState(100);
 
   return (
-    <div className="flex flex-col items-center dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="flex flex-col items-center">
       <div>
         <AllAdvertising />
       </div>
 
-      <div className="w-[330px] border-2 p-2 mt-3 h-[200px] shadow-lg rounded-lg dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+      <div className="w-[330px] border-2 p-2 mt-3 h-[200px] shadow-lg rounded-lg">
         <div className="flex items-center  justify-between">
           <div className="flex items-center gap-1 mr-4">
             <img src="/icon/box.png" className="mb-5" />

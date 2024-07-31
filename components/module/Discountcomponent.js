@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Discountcomponent() {
   return (
-    <div className="bg-[#576C63] max-w-[490px] mx-auto mt-7 h-[500px] rounded-lg  dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="bg-[#576C63] max-w-[490px] mx-auto mt-7 h-[500px] rounded-lg ">
       <div className="flex items-center justify-center gap-3">
         <img className="mt-9" src="/images/iconleft.png" />
         <span className="mt-9 text-white text-xl font-bold">

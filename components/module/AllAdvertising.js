@@ -24,7 +24,7 @@ function NewAdvertising() {
   };
 
   return (
-    <div className="w-[333px] rounded-lg mt-6 p-4 bg-[#EFEFEF] dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="w-[333px] rounded-lg mt-6 p-4 bg-[#EFEFEF">
       <div className="flex items-center justify-around text-sm">
         <Link href={"/advertising"}>
           <h2

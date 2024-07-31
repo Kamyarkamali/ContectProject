@@ -9,7 +9,7 @@ function QuastionPop({ onClose }) {
   };
 
   return (
-    <div className="flex flex-col items-center py-7 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="flex flex-col items-center py-7">
       <div className="border-b-[7px] rounded-lg border-gray-700 w-[100px]"></div>
 
       <div className="flex justify-between w-full mr-5 py-5">

@@ -3,7 +3,7 @@ import React from "react";
 
 function OpeningRegester() {
   return (
-    <div className="flex flex-col items-center py-10  dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="flex flex-col items-center py-10">
       <div className="flex flex-col gap-3 items-center">
         <p className="font-bold text-xl">به کانکت خوش آمدی</p>
         <p>لطفا جهت ثبت نام در کانکت فرم زیر را تکمیل کنید</p>

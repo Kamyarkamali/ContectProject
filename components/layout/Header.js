@@ -34,7 +34,7 @@ function Header() {
   };
 
   return (
-    <div className="max-w-[1415px]  mx-auto relative  dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="max-w-[1415px]  mx-auto relative">
       <div className="flex justify-center relative">
         <img
           className={`w-[1415px] h-[100px] ${
