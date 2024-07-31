@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Opening2 from "./Opening2";
 import OpeningRegester from "./OpeningRegester";
+import { usetitle } from "@/helpers/changetitlename";
 
 function OpeningComponent() {
   const [step, setstep] = useState(1);
+
+  useEffect(() => {
+    usetitle("صفحه ورود و ثبت نام");
+  }, []);
 
   return (
     <>

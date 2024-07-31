@@ -3,7 +3,7 @@ import React from "react";
 
 function CategoryDetailse() {
   return (
-    <div className="flex flex-col items-center dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div className="flex flex-col items-center">
       <div className="mt-4">
         <img src="/images/banner4.jpg" className="w-[400px] rounded-lg" />
       </div>
@@ -84,6 +84,7 @@ function CategoryDetailse() {
           </div>
         </div>
       </div>
+      <div className="mb-9"></div>
     </div>
   );
 }

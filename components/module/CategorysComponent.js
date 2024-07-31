@@ -5,7 +5,7 @@ function CategorysComponent() {
   return (
     <div>
       <div>
-        <div className="flex flex-col items-center py-7 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+        <div className="flex flex-col items-center py-7">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             محبوب ترین خدمات
           </h1>
@@ -43,7 +43,7 @@ function CategorysComponent() {
       </div>
 
       <div>
-        <div className="flex flex-col items-center py-10 dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in ">
+        <div className="flex flex-col items-center py-10">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             خدمات اینترنتی
           </h1>

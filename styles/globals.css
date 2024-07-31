@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: yekanbakh;
-  src: url("/my-app/public/fonts/woff2/YekanBakhFaNum-Bold.woff2");
+  src: url("/fonts/woff2/YekanBakhFaNum-Bold.woff2");
 }
 
 * {
@@ -39,4 +39,26 @@ progress[value]::-webkit-progress-value {
 progress[value]::-moz-progress-bar {
   background-color: red; /* رنگ نوار پیشرفت */
   border-radius: 10px 0 0 10px;
+}
+
+@font-face {
+  font-family: iranyekan;
+  src: url("/my-app/public/fonts/woff/YekanBakhFaNum-Bold.woff");
+}
+
+body {
+  font-family: iranyekan;
+}
+
+.filter-default {
+  filter: invert(0) sepia(0) saturate(1) hue-rotate(0deg);
+}
+
+.filter-active {
+  filter: invert(39%) sepia(81%) saturate(2561%) hue-rotate(360deg)
+    brightness(102%) contrast(101%);
+}
+
+.dark .filter-white {
+  filter: invert(100%);
 }

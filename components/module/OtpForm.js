@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 function OtpForm() {
   const [otp, setOtp] = useState(["", "", "", ""]);
+  const [isValidOtp, setIsValidOtp] = useState(false);
   const inputRefs = useRef([]);
   const [timer, setTimer] = useState(60);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -25,6 +26,16 @@ function OtpForm() {
     }
   }, [timer]);
 
+  useEffect(() => {
+    // Simulating OTP validation with a hardcoded OTP (e.g., "1234")
+    const otpCode = otp.join("");
+    if (otpCode.length === 4 && otpCode === "1234") {
+      setIsValidOtp(true);
+    } else {
+      setIsValidOtp(false);
+    }
+  }, [otp]);
+
   const handleChange = (e, index) => {
     const value = e.target.value;
     if (/^\d$/.test(value) || value === "") {
@@ -32,15 +43,17 @@ function OtpForm() {
       newOtp[index] = value;
       setOtp(newOtp);
 
-      if (value !== "" && index > 0) {
+      if (value !== "" && index < 3) {
+        inputRefs.current[index + 1].focus();
+      } else if (value === "" && index > 0) {
         inputRefs.current[index - 1].focus();
       }
     }
   };
 
   const handleKeyDown = (e, index) => {
-    if (e.key === "Backspace" && otp[index] === "" && index < 3) {
-      inputRefs.current[index + 1].focus();
+    if (e.key === "Backspace" && otp[index] === "" && index > 0) {
+      inputRefs.current[index - 1].focus();
     }
   };
 
@@ -66,14 +79,16 @@ function OtpForm() {
         {otp.map((_, index) => (
           <input
             key={index}
-            ref={(el) => (inputRefs.current[3 - index] = el)} // Reverse the order of refs
+            ref={(el) => (inputRefs.current[index] = el)}
             id={`otp-input-${index}`}
             type="text"
             maxLength="1"
-            value={otp[3 - index]} // Reverse the order of values
-            onChange={(e) => handleChange(e, 3 - index)}
-            onKeyDown={(e) => handleKeyDown(e, 3 - index)}
-            className="w-[80px] text-gray-500 font-bold h-[80px] text-center outline-none text-lg border border-gray-400 rounded"
+            value={otp[index]}
+            onChange={(e) => handleChange(e, index)}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            className={`w-[80px] h-[80px] text-center text-lg border rounded outline-none ${
+              isValidOtp ? "border-green-500" : "border-gray-400"
+            }`}
           />
         ))}
       </div>
@@ -92,7 +107,12 @@ function OtpForm() {
 
       <div className="flex flex-col gap-2 mt-[4rem] items-center justify-center">
         <Link href={"/userPanele"}>
-          <button className="bg-blue-400 p-2 w-[130px] rounded-lg text-white shadow-lg">
+          <button
+            onClick={clickHandeler}
+            className={`bg-blue-400 p-2 w-[130px] rounded-lg text-white shadow-lg ${
+              isValidOtp ? "opacity-100" : "opacity-50 cursor-not-allowed"
+            }`}
+          >
             ورود
           </button>
         </Link>

@@ -25,7 +25,7 @@ export const userNav = [
     paths: "/categortys",
   },
   { id: 4, title: "کیف پول", image: "/icon/wallet.png", paths: "/" },
-  { id: 5, title: "حساب", image: "/icon/user.png", paths: "/opening" },
+  { id: 5, title: "حساب", image: "/icon/user.png", paths: "/userPanele" },
 ];
 
 export const servicesImages = [

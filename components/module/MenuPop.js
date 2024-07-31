@@ -1,9 +1,9 @@
 import { menuPop } from "@/data/Localdata";
 import React from "react";
 
-function MenuPop({ open, setOpen, onSelect }) {
+function MenuPop({ setOpen, onSelect }) {
   return (
-    <div className="bg-white grid relative grid-cols-4 z-40 w-[500px] rounded-lg mx-auto p-8 gap-4">
+    <div className="bg-white grid relative grid-cols-4 z-40 max-w-[500px] rounded-lg mx-auto p-8 gap-4">
       {menuPop.map((item) => (
         <div
           key={item.id}

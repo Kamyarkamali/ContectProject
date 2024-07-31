@@ -17,19 +17,21 @@ function UserNav() {
             <Link href={item.paths}>
               <img
                 src={item.image}
-                className={`w-[24px] filter-default ${
-                  selected === item.id ? "filter-active" : "dark:filter-white"
+                className={`w-[24px] ${
+                  selected === item.id ? "filter-active" : "filter-default"
                 }`}
                 alt={item.title}
               />
             </Link>
-            <p
-              className={`text-sm mt-1 ${
-                selected === item.id && "text-orange-500"
-              }`}
-            >
-              {item.title}
-            </p>
+            <Link href={item.paths}>
+              <p
+                className={`text-sm mt-1 ${
+                  selected === item.id && "text-orange-500"
+                }`}
+              >
+                {item.title}
+              </p>
+            </Link>
           </div>
         ))}
       </div>

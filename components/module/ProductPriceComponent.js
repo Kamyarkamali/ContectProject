@@ -34,12 +34,12 @@ function ProductPriceComponent() {
           <p className="text-sm text-gray-600 font-bold">پرداخت آگهی</p>
         </div>
         <div className="ml-8">
-          <img src="/icon/arrowleft.png" onClick={backHandeler} />
+          <img src="/icon/arrowleft.png " onClick={backHandeler} />
         </div>
       </div>
 
-      <div className="flex items-center justify-start w-full">
-        <img src="/icon/color.png" className="mt-6 w-[50px]" />
+      <div className="flex items-center justify-start w-full mr-4 gap-1 mt-4">
+        <img src="/icon/color.png" className=" w-[15px] rounded-md" />
         <p>مبلغ سفارش شما :</p>
       </div>
 
@@ -49,8 +49,8 @@ function ProductPriceComponent() {
 
       <div className="border-b-2 w-full p-3 border-gray-300"></div>
 
-      <div className="flex items-center justify-start w-full">
-        <img src="/icon/color.png" className="mt-6 w-[50px]" />
+      <div className="flex items-center justify-start w-full mt-4 mb-4 mr-4 gap-1">
+        <img src="/icon/color.png" className="w-[15px] rounded-md" />
         <p>نحوه پرداخت خود را انتخاب کنید</p>
       </div>
 
@@ -106,12 +106,12 @@ function ProductPriceComponent() {
 
       <div className="border-b-2 w-full p-3 border-gray-300"></div>
 
-      <div className="flex items-center justify-start w-full">
-        <img src="/icon/color.png" className="mt-6 w-[50px]" />
+      <div className="flex items-center justify-start w-full mr-4 gap-1 mt-4">
+        <img src="/icon/color.png" className="w-[15px] rounded-md" />
         <p>در صورت داشتن کد تخفیف آن را وارد کنید</p>
       </div>
 
-      <div className="border-[1px] rounded-lg border-gray-400 border-l-none">
+      <div className="border-[1px] rounded-lg border-gray-400 border-l-none mt-4">
         <input
           placeholder="625381wjwu"
           className="outline-none placeholder:p-1"

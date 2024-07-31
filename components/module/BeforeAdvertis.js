@@ -82,7 +82,7 @@ function BeforeAdvertisComponents() {
         <p className="text-center mt-4 text-red-500">در انتظار فروشنده</p>
       </div>
 
-      <div className="absolute top-[40rem] right-[1rem]">
+      <div className="absolute top-[41rem] right-[1rem]">
         <Button />
       </div>
 

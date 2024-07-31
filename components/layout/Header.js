@@ -114,7 +114,12 @@ function Header() {
           pathname === "/opening/checkbox" ||
           pathname === "/userPanele" ||
           pathname === "/userPanele/settings" ||
-          pathname === "/userPanele/addresDetailse"
+          pathname === "/userPanele/addresDetailse" ||
+          pathname === "/opening" ||
+          pathname === "/opening/login" ||
+          pathname === "/produtcPrice" ||
+          pathname === "/fainalprice" ||
+          pathname === "/conversation"
             ? "hidden"
             : "block"
         }`}

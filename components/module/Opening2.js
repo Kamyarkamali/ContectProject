@@ -1,6 +1,11 @@
-import React from "react";
+import { usetitle } from "@/helpers/changetitlename";
+import React, { useEffect } from "react";
 
 function Opening2({ setstep }) {
+  useEffect(() => {
+    usetitle("صفحه ورود و ثبت نام");
+  }, []);
+
   return (
     <div className="flex flex-col items-center py-10">
       <div className="flex flex-col items-center gap-4">
