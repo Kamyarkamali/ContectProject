@@ -15,6 +15,16 @@ function OtpForm() {
     router.back();
   };
 
+  const clickHandler = () => {
+    if (isValidOtp) {
+      // Logic for valid OTP submission
+      console.log("Valid OTP submitted");
+    } else {
+      // Logic for invalid OTP
+      console.log("Invalid OTP");
+    }
+  };
+
   useEffect(() => {
     if (timer > 0) {
       const interval = setInterval(() => {
@@ -108,7 +118,7 @@ function OtpForm() {
       <div className="flex flex-col gap-2 mt-[4rem] items-center justify-center">
         <Link href={"/userPanele"}>
           <button
-            onClick={clickHandeler}
+            onClick={clickHandler}
             className={`bg-blue-400 p-2 w-[130px] rounded-lg text-white shadow-lg ${
               isValidOtp ? "opacity-100" : "opacity-50 cursor-not-allowed"
             }`}
