@@ -7,7 +7,7 @@ import MultiServicesComponent from "../module/MultiServicesComponent";
 
 function HomePage() {
   return (
-    <div className="dark:bg-slate-800 dark:text-white transition-all duration-300 ease-in">
+    <div>
       <Slider />
       <Services />
       <HeroSection />
