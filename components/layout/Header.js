@@ -13,8 +13,6 @@ function Header() {
 
   const { title } = router.query;
 
-  console.log(title);
-
   // بررسی مسیر و انتخاب تصاویر بر اساس آن
   const headerImageSrc =
     pathname === "/categortys/detailseCategory"
@@ -55,6 +53,8 @@ function Header() {
           alt="header"
         />
       </div>
+
+      {/* /userPanele/addresDetailse */}
 
       <div className="absolute top-0 flex justify-between w-full items-center mt-5">
         <div>
@@ -113,7 +113,8 @@ function Header() {
           pathname === "/opening" ||
           pathname === "/opening/checkbox" ||
           pathname === "/userPanele" ||
-          pathname === "/userPanele/settings"
+          pathname === "/userPanele/settings" ||
+          pathname === "/userPanele/addresDetailse"
             ? "hidden"
             : "block"
         }`}

@@ -61,7 +61,12 @@ export const menuPop = [
 ];
 
 export const menuUser = [
-  { id: 1, title: "اطلاعات حساب", image: "/iconuseraccount/1.png", paths: "/" },
+  {
+    id: 1,
+    title: "اطلاعات حساب",
+    image: "/iconuseraccount/1.png",
+    paths: "/userPanele/addresDetailse",
+  },
   { id: 2, title: "آدرس ها", image: "/iconuseraccount/2.png", paths: "/" },
   { id: 3, title: "نظرات شما", image: "/iconuseraccount/3.png", paths: "/" },
   { id: 4, title: "دعوت دوستان", image: "/iconuseraccount/4.png", paths: "/" },
