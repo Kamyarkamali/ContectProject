@@ -17,6 +17,7 @@ function OtpForm() {
 
   const clickHandler = () => {
     if (isValidOtp) {
+      router.push("/");
       // Logic for valid OTP submission
       console.log("Valid OTP submitted");
     } else {
@@ -116,7 +117,7 @@ function OtpForm() {
       </div>
 
       <div className="flex flex-col gap-2 mt-[4rem] items-center justify-center">
-        <Link href={"/userPanele"}>
+        <Link href={"/"}>
           <button
             onClick={clickHandler}
             className={`bg-blue-400 p-2 w-[130px] rounded-lg text-white shadow-lg ${

@@ -16,9 +16,9 @@ function AdvertisingComponent() {
 
       <div className="mt-5 flex flex-col items-center mb-[11rem]">
         <p className="font-bold text-xl">
-          صندوق درخواست های روز شما خالی میباشد!
+          صندوق درخواست های روز شما خالی میباشد “
         </p>
-        <p className="text-sm text-gray-500">صندوق ارسال شما خالی میباشد</p>
+        <p className="text-sm text-gray-400">هنوز درخواستی ارسال نکرده اید</p>
       </div>
 
       <div className="absolute top-[30rem] right-[1rem]">

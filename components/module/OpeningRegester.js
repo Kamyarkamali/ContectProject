@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 
 function OpeningRegester() {
   const {
@@ -8,12 +9,14 @@ function OpeningRegester() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const router = useRouter(); // برای هدایت به صفحه جدید
 
   const onFormsubmit = (data) => {
-    if (Object.keys(errors).length > 0) {
-      return;
+    if (Object.keys(errors).length === 0) {
+      // بررسی اینکه آیا خطاها وجود ندارد
+      console.log(data);
+      router.push("/opening/checkbox"); // هدایت به صفحه مورد نظر
     }
-    console.log(data);
   };
 
   return (

@@ -25,7 +25,7 @@ function UserNav() {
             </Link>
             <Link href={item.paths}>
               <p
-                className={`text-sm mt-1 ${
+                className={`text-[13px] font-body text-gray-600 mt-1 ${
                   selected === item.id && "text-orange-500"
                 }`}
               >
