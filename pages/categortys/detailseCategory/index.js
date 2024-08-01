@@ -16,7 +16,7 @@ function CategoryDetailse() {
         </div>
 
         <div>
-          <button className="p-3 text-[13px] font-bold rounded-full shadow-md">
+          <button className="p-3 text-[13px] rounded-full shadow-md">
             بیشترین امتیاز
           </button>
         </div>

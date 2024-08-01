@@ -5,7 +5,7 @@ function CategorysComponent() {
   return (
     <div>
       <div>
-        <div className="flex flex-col items-center py-7">
+        <div className="flex flex-col items-center mt-6">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             محبوب ترین خدمات
           </h1>
@@ -43,7 +43,7 @@ function CategorysComponent() {
       </div>
 
       <div>
-        <div className="flex flex-col items-center py-10">
+        <div className="flex flex-col items-center mt-6">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             خدمات اینترنتی
           </h1>
@@ -60,7 +60,7 @@ function CategorysComponent() {
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">قبوض</p>
+              <p className="text-sm mt-1">قبوض</p>
             </div>
             <div className="flex flex-col items-center">
               <Link
@@ -74,7 +74,7 @@ function CategorysComponent() {
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">ابلاغیه</p>
+              <p className="text-sm mt-1">ابلاغیه</p>
             </div>
             <div className="flex flex-col items-center">
               <Link
@@ -88,14 +88,14 @@ function CategorysComponent() {
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">سایر</p>
+              <p className="text-sm mt-1">سایر</p>
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <div className="flex flex-col items-center py-10 mb-[4rem]">
+        <div className="flex flex-col items-center mt-6 mb-[7rem]">
           <h1 className="text-right w-[330px] mb-[1rem] font-bold">
             خدمات تحقیقی
           </h1>
@@ -112,7 +112,7 @@ function CategorysComponent() {
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">تایپ</p>
+              <p className="text-sm mt-1">تایپ</p>
             </div>
             <div className="flex flex-col items-center">
               <Link
@@ -126,7 +126,7 @@ function CategorysComponent() {
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">جزوه</p>
+              <p className="text-sm mt-1">جزوه</p>
             </div>
             <div className="flex flex-col items-center">
               <Link
@@ -140,7 +140,7 @@ function CategorysComponent() {
                   className="w-[140px] rounded-lg object-cover"
                 />
               </Link>
-              <p className="text-sm mt-1 font-bold">سایر</p>
+              <p className="text-sm mt-1">سایر</p>
             </div>
           </div>
         </div>

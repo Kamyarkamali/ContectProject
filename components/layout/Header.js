@@ -119,7 +119,8 @@ function Header() {
           pathname === "/opening/login" ||
           pathname === "/produtcPrice" ||
           pathname === "/fainalprice" ||
-          pathname === "/conversation"
+          pathname === "/conversation" ||
+          pathname === "/userPanele/supporter"
             ? "hidden"
             : "block"
         }`}
