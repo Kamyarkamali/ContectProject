@@ -27,7 +27,7 @@ function BeforeAdvertisComponents() {
       <div className="w-[360px] border-2 p-3 mt-3 h-fit shadow-lg rounded-lg relative">
         <div className="flex items-center  justify-between">
           <div className="flex items-center gap-1">
-            <img src="/icon/Icon.png" />
+            <img src="/images/icon.png" />
             <div>
               <h2 className="text-[15px] font-bold">طراحی لوگو</h2>
               <div className="flex items-center gap-2 mt-2">
@@ -65,7 +65,7 @@ function BeforeAdvertisComponents() {
       <div className="w-[360px] border-2 p-3 mt-3 h-fit shadow-lg rounded-lg">
         <div className="flex items-center  justify-between">
           <div className="flex items-center gap-1">
-            <img src="/icon/Icon.png" />
+            <img src="/images/icon.png" />
             <div>
               <h2 className="text-[15px] font-bold">طراحی لوگو</h2>
               <div className="flex items-center gap-2 mt-2">
