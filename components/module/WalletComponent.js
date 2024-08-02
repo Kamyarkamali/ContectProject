@@ -149,7 +149,7 @@ function WalletComponent() {
             <p className="mt-6 font-bold text-xl">
               تا این لحظه تراکنشی وجود نداشته است
             </p>
-            <p className="text-[11px] text-gray-500 text-center">
+            <p className="text-[11px] mb-9 text-gray-500 text-center">
               میتوانید با زدن بروی دکمه شارژ حساب ، اولین تراکنش کیف پول خود را
               انجام دهید{" "}
             </p>

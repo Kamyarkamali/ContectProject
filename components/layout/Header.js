@@ -142,8 +142,7 @@ function Header() {
           pathname === "/conversation" ||
           pathname === "/opening/login" ||
           pathname === "/opening" ||
-          pathname === "/opening/checkbox" ||
-          pathname === "/wallet"
+          pathname === "/opening/checkbox"
             ? "hidden"
             : "block"
         }`}
