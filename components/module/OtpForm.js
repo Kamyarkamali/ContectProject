@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useRef, useEffect } from "react";
+import WellcomePop from "./WellcomePop";
 
 function OtpForm() {
   const [otp, setOtp] = useState(["", "", "", ""]);
@@ -8,6 +9,7 @@ function OtpForm() {
   const inputRefs = useRef([]);
   const [timer, setTimer] = useState(60);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   const router = useRouter();
 
@@ -16,14 +18,12 @@ function OtpForm() {
   };
 
   const clickHandler = () => {
-    if (isValidOtp) {
-      router.push("/");
-      // Logic for valid OTP submission
-      console.log("Valid OTP submitted");
-    } else {
-      // Logic for invalid OTP
-      console.log("Invalid OTP");
-    }
+    setShowPopup(true); // نمایش پاپ‌آپ در هر شرایطی
+  };
+
+  const closePopupHandler = () => {
+    setShowPopup(false);
+    router.push("/"); // هدایت به مسیر مورد نظر پس از بستن پاپ‌آپ
   };
 
   useEffect(() => {
@@ -38,7 +38,6 @@ function OtpForm() {
   }, [timer]);
 
   useEffect(() => {
-    // Simulating OTP validation with a hardcoded OTP (e.g., "1234")
     const otpCode = otp.join("");
     if (otpCode.length === 4 && otpCode === "1234") {
       setIsValidOtp(true);
@@ -71,7 +70,6 @@ function OtpForm() {
   const handleResend = () => {
     setTimer(60);
     setIsButtonDisabled(true);
-    // Logic to resend OTP
   };
 
   return (
@@ -84,7 +82,7 @@ function OtpForm() {
         </p>
       </div>
       <div className="flex justify-start w-[400px] mt-[2rem]">
-        <p className="text-[11px] text-blue-500">091243289999</p>
+        <p className="text-[11px] text-blue-500 mr-4">091243289999</p>
       </div>
       <div className="flex justify-center gap-3 mt-5">
         {otp.map((_, index) => (
@@ -117,20 +115,22 @@ function OtpForm() {
       </div>
 
       <div className="flex flex-col gap-2 mt-[4rem] items-center justify-center">
-        <Link href={"/"}>
-          <button
-            onClick={clickHandler}
-            className={`bg-blue-400 p-2 w-[130px] rounded-lg text-white shadow-lg ${
-              isValidOtp ? "opacity-100" : "opacity-50 cursor-not-allowed"
-            }`}
-          >
-            ورود
-          </button>
-        </Link>
+        <button
+          onClick={clickHandler}
+          className={`bg-blue-400 p-2 w-[130px] rounded-lg text-white shadow-lg`}
+        >
+          ورود
+        </button>
         <button onClick={backHandeler} className="text-[15px]">
           برگشت
         </button>
       </div>
+
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <WellcomePop onClose={closePopupHandler} />
+        </div>
+      )}
 
       <div className="mb-[8.1rem]"></div>
     </div>

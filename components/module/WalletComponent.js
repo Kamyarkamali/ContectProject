@@ -2,14 +2,25 @@ import React, { useState } from "react";
 
 function WalletComponent() {
   const [showPopup, setShowPopup] = useState(false);
+  const [showCardPopup, setShowCardPopup] = useState(false);
+  const [showWithdrawPopup, setShowWithdrawPopup] = useState(false);
   const [balance, setBalance] = useState(null);
+  const [accounts, setAccounts] = useState([]); // آرایه برای نگهداری حساب‌های بانکی
+  const [selectedAccount, setSelectedAccount] = useState(null); // حساب انتخاب شده
+  const [newAccount, setNewAccount] = useState(""); // شماره شبا جدید برای اضافه کردن
 
   const handleChargeClick = () => {
     setShowPopup(true);
   };
 
+  const handleWithdrawClick = () => {
+    setShowWithdrawPopup(true);
+  };
+
   const handlePopupClose = () => {
     setShowPopup(false);
+    setShowCardPopup(false);
+    setShowWithdrawPopup(false);
   };
 
   const handlePopupSubmit = (event) => {
@@ -17,6 +28,45 @@ function WalletComponent() {
     const amount = event.target.elements.amount.value;
     setBalance(amount);
     setShowPopup(false);
+    setShowCardPopup(true);
+  };
+
+  const handleCardPopupSubmit = (event) => {
+    event.preventDefault();
+    const sheba = event.target.elements.sheba.value;
+    if (sheba) {
+      const newAccount = `IR ${sheba}`;
+      setAccounts([...accounts, newAccount]);
+      setNewAccount(""); // پاک کردن شماره شبا پس از اضافه کردن
+      setShowCardPopup(false);
+    }
+  };
+
+  const handleWithdrawPopupSubmit = (event) => {
+    event.preventDefault();
+    const amount = event.target.elements.withdrawAmount.value;
+    if (selectedAccount) {
+      alert(`برداشت ${amount} ریال به حساب ${selectedAccount}`);
+    } else {
+      alert("لطفا یک حساب را انتخاب کنید.");
+    }
+    setShowWithdrawPopup(false);
+  };
+
+  const handleAddAccount = () => {
+    setShowCardPopup(true);
+  };
+
+  const handleAccountClick = (account) => {
+    setSelectedAccount(account);
+  };
+
+  const handleNewAccountChange = (event) => {
+    setNewAccount(event.target.value);
+  };
+
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("fa-IR").format(number);
   };
 
   return (
@@ -43,7 +93,7 @@ function WalletComponent() {
           ) : (
             <>
               <p className="text-xl font-bold text-white">
-                {balance} میلیون ریال
+                {formatNumber(balance)} میلیون ریال
               </p>
             </>
           )}
@@ -61,7 +111,10 @@ function WalletComponent() {
           </div>
 
           <div className="flex flex-col">
-            <div className="bg-[#5C7878] w-[70px] h-[70px] flex justify-center items-center rounded-[100%]">
+            <div
+              onClick={handleWithdrawClick}
+              className="bg-[#5C7878] w-[70px] h-[70px] flex justify-center items-center rounded-[100%] cursor-pointer"
+            >
               <img src="/wallet/icon (2).png" />
             </div>
             <p className="text-white text-[13px] text-center mt-2">
@@ -70,7 +123,10 @@ function WalletComponent() {
           </div>
 
           <div className="flex flex-col">
-            <div className="bg-[#5C7878] w-[70px] h-[70px] flex justify-center items-center rounded-[100%]">
+            <div
+              onClick={handleAddAccount}
+              className="bg-[#5C7878] w-[70px] h-[70px] flex justify-center items-center rounded-[100%] cursor-pointer"
+            >
               <img src="/wallet/Card.png" />
             </div>
             <p className="text-white text-[13px] text-center mt-2">
@@ -105,7 +161,7 @@ function WalletComponent() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white w-[400px] h-[280px] p-6 rounded-lg">
             <div className="flex justify-center">
-              <div className="border-b-[5px] border-gray-700 w-[50px] rounded-lg "></div>
+              <div className="border-b-[5px] border-gray-700 w-[50px] rounded-lg"></div>
             </div>
 
             <div className="flex justify-between items-center">
@@ -131,14 +187,164 @@ function WalletComponent() {
                   name="amount"
                   placeholder="مبلغ را وارد کنید"
                   className="border placeholder:text-sm p-2 rounded w-full mb-4"
+                  onBlur={(e) => {
+                    e.target.value = formatNumber(e.target.value);
+                  }}
                 />
               </div>
               <div className="flex justify-center gap-4">
                 <button
                   type="submit"
-                  className="bg-[#AFC0FF] w-[300px] text-white px-4 py-2 rounded-lg  shadow-lg"
+                  className="bg-[#AFC0FF] w-[300px] text-white px-4 py-2 rounded-lg shadow-lg"
                 >
                   پرداخت
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {showCardPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white w-[400px] h-[470px] p-6 rounded-lg">
+            <div className="flex justify-center">
+              <div className="border-b-[5px] border-gray-700 w-[50px] rounded-lg"></div>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2 mt-9">
+                <img src="/wallet/Card Double 2.png" />
+                <h2 className="text-sm font-bold">افزودن حساب</h2>
+              </div>
+              <div
+                onClick={handlePopupClose}
+                className="border-[1px] p-1 rounded-[100%] border-gray-400 cursor-pointer"
+              >
+                <img src="/wallet/Arrow Left.png" />
+              </div>
+            </div>
+
+            <form onSubmit={handleCardPopupSubmit}>
+              <div className="flex flex-col gap-3 mt-4">
+                <p className="text-[12px]">
+                  برای افزودن حساب بانکی برای اطمینان بیشتر و طبق قانون نیاز است
+                  پس از وارد کردن مشخصات زیر احراز هویت کارت را انجام دهید
+                </p>
+
+                <label className="text-sm font-bold">شماره کارت:</label>
+                <input
+                  type="text"
+                  name="cardNumber"
+                  placeholder="شماره کارت را وارد کنید"
+                  className="border outline-none placeholder:text-sm p-2 rounded w-full mb-4"
+                />
+                <label className="text-sm font-bold">شماره شبا:</label>
+                <input
+                  type="text"
+                  name="sheba"
+                  placeholder="شماره شبا را وارد کنید"
+                  value={newAccount}
+                  onChange={handleNewAccountChange}
+                  className="border outline-none placeholder:text-sm p-2 rounded w-full mb-4"
+                />
+              </div>
+              <div className="flex justify-center gap-4">
+                <button
+                  type="submit"
+                  className="bg-[#AFC0FF] w-[300px] text-white px-4 py-2 rounded-lg shadow-lg"
+                >
+                  تایید
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {showWithdrawPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white w-[400px] h-fit p-6 rounded-lg">
+            <div className="flex justify-center">
+              <div className="border-b-[5px] border-gray-700 w-[50px] rounded-lg"></div>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2 mt-9">
+                <img src="/wallet/Card.png" />
+                <h2 className="text-sm font-bold">برداشت وجه</h2>
+              </div>
+              <div
+                onClick={handlePopupClose}
+                className="border-[1px] p-1 rounded-[100%] border-gray-400 cursor-pointer"
+              >
+                <img src="/wallet/Arrow Left.png" />
+              </div>
+            </div>
+
+            <form onSubmit={handleWithdrawPopupSubmit}>
+              <div className="flex flex-col gap-3 mt-4">
+                <label className="text-[13px] font-bold">
+                  مبلغ مورد نظر را وارد کنید:
+                </label>
+                <input
+                  type="number"
+                  name="withdrawAmount"
+                  placeholder="2000000 میلیون ریال"
+                  className="border placeholder:text-[12px] p-2 rounded w-full mb-4"
+                />
+                <div>
+                  <label className="text-sm font-bold">
+                    حساب مقصد را وارد کنید:
+                  </label>
+                  <p className="text-[12px]">
+                    حسابی که قصد دارید مبلغ مورد نظر درون آن واریز شود را انتخاب
+                    کنید و در صورت نیاز آن را وارد کنید
+                  </p>
+                </div>
+                <div className="flex flex-col bg-gray-200 p-2 border-[1px] rounded-lg">
+                  {accounts.length > 0 ? (
+                    accounts.map((account, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAccountClick(account)}
+                        className={`flex items-center justify-between mb-2 p-2 cursor-pointer ${
+                          selectedAccount === account
+                            ? "border-2 border-green-500"
+                            : ""
+                        }`}
+                      >
+                        <div className="flex items-center gap-2">
+                          <img src="/wallet/Iconex (2).png" />
+                          <img src="/wallet/Group 1.png" />
+                        </div>
+                        <p>{account}</p>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-center text-gray-500">
+                      حسابی اضافه نشده است
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="flex justify-center gap-4 mt-5">
+                <button
+                  type="submit"
+                  className="bg-[#AFC0FF] w-[300px] text-white px-4 py-2 rounded-lg shadow-lg"
+                >
+                  برداشت
+                </button>
+              </div>
+
+              <div className="mt-5">
+                <button
+                  type="button"
+                  onClick={handleAddAccount}
+                  className="text-sm rounded-lg text-white bg-green-400 p-2 flex items-center gap-2"
+                >
+                  <img src="/wallet/Card.png" className="w-[20px]" />
+                  کارت جدید
                 </button>
               </div>
             </form>
