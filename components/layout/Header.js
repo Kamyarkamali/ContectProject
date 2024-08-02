@@ -1,6 +1,4 @@
 import React from "react";
-
-//component-module
 import SearchBar from "../module/SearchBar";
 import Link from "next/link";
 import UserNav from "../module/UserNav";
@@ -10,7 +8,6 @@ function Header() {
   const { pathname } = useRouter();
 
   const router = useRouter();
-
   const { title } = router.query;
 
   // بررسی مسیر و انتخاب تصاویر بر اساس آن
@@ -21,23 +18,21 @@ function Header() {
   const logoImageSrc =
     pathname === "/categortys/detailseCategory" ? title : "/images/logo.png";
   const headsetImageSrc =
-    pathname === "/categortys/detailseCategory"
+    pathname === "/userPanele"
+      ? "/images/Bell 2.png"
+      : pathname === "/categortys/detailseCategory"
       ? "/icon/arrowleft.png"
       : "/images/Headset.png";
-
-  const req = "/advertising/sendrequest";
-
-  const urlProductPrice = "/produtcPrice";
 
   const backHandeler = () => {
     router.back();
   };
 
   return (
-    <div className="max-w-[1415px]  mx-auto relative">
+    <div className="max-w-[1415px] mx-auto relative">
       <div className="flex justify-center relative">
         <img
-          className={`w-[1415px] h-[100px] ${
+          className={`w-[1415px] h-[100px]  ${
             pathname === "/userPanele" && "h-[190px]"
           } ${
             pathname === "/produtcPrice" ||
@@ -50,31 +45,37 @@ function Header() {
               ? "hidden"
               : "block"
           }`}
-          src={"/images/image.jpg"}
+          src={
+            pathname === "/userPanele" ? "images/bguser.png" : headerImageSrc
+          }
           alt="header"
         />
       </div>
 
-      {/* /userPanele/addresDetailse */}
-
       <div className="absolute top-0 flex justify-between w-full items-center mt-5">
         <div>
           <Link href={"/"}>
-            <img
-              src={"/images/logo.png"}
-              className={`cursor-pointer w-[90px] mr-6 object-cover ${
-                pathname === "/produtcPrice" ||
-                pathname === "/fainalprice" ||
-                pathname === "/conversation" ||
-                pathname === "/opening" ||
-                pathname === "/opening/checkbox" ||
-                pathname === "/opening/login" ||
-                pathname === "/userPanele" ||
-                pathname === "/wallet"
-                  ? "hidden"
-                  : "block"
-              } ${title ? "hidden" : "block"}`}
-            />
+            {pathname === "/Subscription" ? (
+              <p className="mr-4 text-[17px] text-gray-700 font-bold">
+                خرید اشتراک
+              </p>
+            ) : (
+              <img
+                src={logoImageSrc}
+                className={`cursor-pointer w-[90px] mr-6 object-cover ${
+                  pathname === "/produtcPrice" ||
+                  pathname === "/fainalprice" ||
+                  pathname === "/conversation" ||
+                  pathname === "/opening" ||
+                  pathname === "/opening/checkbox" ||
+                  pathname === "/opening/login" ||
+                  pathname === "/userPanele" ||
+                  pathname === "/wallet"
+                    ? "hidden"
+                    : "block"
+                } ${title ? "hidden" : "block"}`}
+              />
+            )}
             <p
               className={`mr-4 text-[17px] text-gray-700 font-bold ${
                 title ? "block" : "hidden"
@@ -92,7 +93,11 @@ function Header() {
           }`}
         >
           <img
-            src={headsetImageSrc}
+            src={
+              pathname === "/userPanele"
+                ? "/images/Bell 2.png"
+                : headsetImageSrc
+            }
             onClick={backHandeler}
             className={`cursor-pointer ${
               pathname === "/produtcPrice" ||
@@ -101,7 +106,6 @@ function Header() {
               pathname === "/opening" ||
               pathname == "/opening/checkbox" ||
               pathname === "/opening/login" ||
-              pathname === "/userPanele" ||
               pathname === "/wallet"
                 ? "hidden"
                 : "block"
@@ -124,7 +128,8 @@ function Header() {
           pathname === "/fainalprice" ||
           pathname === "/conversation" ||
           pathname === "/userPanele/supporter" ||
-          pathname === "/wallet"
+          pathname === "/wallet" ||
+          pathname === "/Subscription"
             ? "hidden"
             : "block"
         }`}

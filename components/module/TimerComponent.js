@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import Countdown from "react-countdown";
 
@@ -18,16 +19,21 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
-const App = () => {
+const TimerComponent = () => {
   const endDate = new Date();
   endDate.setHours(endDate.getHours() + 100);
+  const { pathname } = useRouter();
 
   return (
-    <div className="flex items-center justify-between w-[195px] text-red-600 text-[10px] mt-1">
+    <div
+      className={`flex  items-center justify-start gap-2 w-[195px] ${
+        pathname === "/Subscription" ? "text-blue-600" : "text-red-600 "
+      } text-[10px] mt-1`}
+    >
       <img src="/images/oclock.png" />
       <Countdown date={endDate} renderer={renderer} />
     </div>
   );
 };
 
-export default App;
+export default TimerComponent;

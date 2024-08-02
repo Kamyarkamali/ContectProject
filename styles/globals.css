@@ -77,3 +77,16 @@ body {
 .popup-background {
   animation: fadeIn 0.3s ease-out forwards;
 }
+
+/* اضافه کردن به فایل CSS سراسری یا یک ماژول CSS */
+.progress-blue::-webkit-progress-value {
+  background-color: blue;
+}
+
+.progress-blue::-moz-progress-bar {
+  background-color: blue;
+}
+
+.progress-blue {
+  color: blue;
+}

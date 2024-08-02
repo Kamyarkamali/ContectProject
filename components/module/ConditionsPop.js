@@ -12,7 +12,7 @@ function ConditionsPop({ onClose }) {
     <div className="flex flex-col items-center py-7">
       <div className="border-b-[7px] rounded-lg border-gray-700 w-[100px]"></div>
 
-      <div className="flex justify-between w-full mr-5 py-5">
+      <div className="flex justify-between w-full mr-5 py-5 mt-[3rem]">
         <div className="flex items-center gap-2">
           <img src="/iconsettings/4.png" alt="FAQ Icon" />
           <p className="text-sm">شرایط استفاده</p>
