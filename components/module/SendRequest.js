@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import MenuPop from "./MenuPop";
 import Gif from "../element/Gif";
+import { useRouter } from "next/navigation";
 
 const initialProvinces = [
   { id: 1, name: "تهران" },
@@ -56,6 +57,8 @@ function SendRequest() {
   const [customCity, setCustomCity] = useState("");
 
   const provinceId = watch("province");
+
+  const router = useRouter();
 
   const addCondition = () => {
     setConditions([...conditions, ""]);
@@ -132,6 +135,10 @@ function SendRequest() {
   const onSubmit = (data) => {
     console.log(data);
     setClose(true);
+  };
+
+  const closeHandeler = () => {
+    router.push("/produtcPrice");
   };
 
   return (
@@ -376,6 +383,7 @@ function SendRequest() {
 
         <div className="flex justify-center mt-4">
           <button
+            onClick={closeHandeler}
             type="submit"
             className="bg-blue-500 w-[200px] p-2 rounded-lg text-white shadow-md shadow-blue-400"
           >
@@ -383,10 +391,6 @@ function SendRequest() {
           </button>
         </div>
       </form>
-
-      <div className="absolute top-[14rem]">
-        {close && <Gif setClose={setClose} />}
-      </div>
 
       <div className="mb-[7rem]"></div>
     </div>

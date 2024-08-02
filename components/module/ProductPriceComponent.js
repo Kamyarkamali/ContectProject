@@ -1,14 +1,13 @@
 import { sp } from "@/helpers/replaceNumber";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-
-//hot toast
 import toast, { Toaster } from "react-hot-toast";
+import Gif from "@/components/element/Gif"; // Import the Gif component
 
 function ProductPriceComponent() {
   const router = useRouter();
-
-  const [selected, setSelected] = useState(1); // پیش فرض مقدار دوم true باشد
+  const [selected, setSelected] = useState(1);
+  const [showGif, setShowGif] = useState(false);
 
   const backHandeler = () => {
     router.back();
@@ -20,9 +19,14 @@ function ProductPriceComponent() {
 
   const clickHandeler = () => {
     toast.success("پرداخت موفقیت آمیز بود");
+    setShowGif(true);
     setTimeout(() => {
       router.push("/fainalprice");
-    }, 2000);
+    }, 4000);
+  };
+
+  const closeGif = () => {
+    setShowGif(false);
   };
 
   return (
@@ -40,7 +44,7 @@ function ProductPriceComponent() {
 
       <div className="flex items-center justify-start w-full mr-4 gap-1 mt-4">
         <img src="/icon/color.png" className=" w-[15px] rounded-md" />
-        <p>مبلغ سفارش شما :</p>
+        <p className="text-sm">مبلغ سفارش شما :</p>
       </div>
 
       <div>
@@ -51,7 +55,7 @@ function ProductPriceComponent() {
 
       <div className="flex items-center justify-start w-full mt-4 mb-4 mr-4 gap-1">
         <img src="/icon/color.png" className="w-[15px] rounded-md" />
-        <p>نحوه پرداخت خود را انتخاب کنید</p>
+        <p className="text-sm">نحوه پرداخت خود را انتخاب کنید</p>
       </div>
 
       <div className="flex flex-col items-center gap-4">
@@ -108,7 +112,7 @@ function ProductPriceComponent() {
 
       <div className="flex items-center justify-start w-full mr-4 gap-1 mt-4">
         <img src="/icon/color.png" className="w-[15px] rounded-md" />
-        <p>در صورت داشتن کد تخفیف آن را وارد کنید</p>
+        <p className="text-sm">در صورت داشتن کد تخفیف آن را وارد کنید</p>
       </div>
 
       <div className="border-[1px] rounded-lg border-gray-400 border-l-none mt-4">
@@ -129,6 +133,8 @@ function ProductPriceComponent() {
 
       <div className="mb-[6rem]"></div>
       <Toaster />
+
+      {showGif && <Gif onClose={closeGif} />}
     </div>
   );
 }

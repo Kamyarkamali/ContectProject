@@ -45,7 +45,8 @@ function Header() {
             pathname === "/conversation" ||
             pathname === "/opening" ||
             pathname === "/opening/checkbox" ||
-            pathname === "/opening/login"
+            pathname === "/opening/login" ||
+            pathname === "/wallet"
               ? "hidden"
               : "block"
           }`}
@@ -68,7 +69,8 @@ function Header() {
                 pathname === "/opening" ||
                 pathname === "/opening/checkbox" ||
                 pathname === "/opening/login" ||
-                pathname === "/userPanele"
+                pathname === "/userPanele" ||
+                pathname === "/wallet"
                   ? "hidden"
                   : "block"
               } ${title ? "hidden" : "block"}`}
@@ -99,7 +101,8 @@ function Header() {
               pathname === "/opening" ||
               pathname == "/opening/checkbox" ||
               pathname === "/opening/login" ||
-              pathname === "/userPanele"
+              pathname === "/userPanele" ||
+              pathname === "/wallet"
                 ? "hidden"
                 : "block"
             }`}
@@ -120,7 +123,8 @@ function Header() {
           pathname === "/produtcPrice" ||
           pathname === "/fainalprice" ||
           pathname === "/conversation" ||
-          pathname === "/userPanele/supporter"
+          pathname === "/userPanele/supporter" ||
+          pathname === "/wallet"
             ? "hidden"
             : "block"
         }`}
@@ -133,7 +137,8 @@ function Header() {
           pathname === "/conversation" ||
           pathname === "/opening/login" ||
           pathname === "/opening" ||
-          pathname === "/opening/checkbox"
+          pathname === "/opening/checkbox" ||
+          pathname === "/wallet"
             ? "hidden"
             : "block"
         }`}

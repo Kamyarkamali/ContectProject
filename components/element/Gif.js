@@ -1,27 +1,25 @@
 import { useRouter } from "next/router";
-import React from "react";
 
-function Gif({ setclose }) {
+function Gif({ onClose }) {
   const router = useRouter();
 
-  const closeHandeler = () => {
-    setclose(true);
-
-    setTimeout(() => {
-      router.push("/produtcPrice");
-    }, 2000);
+  const handleButtonClick = () => {
+    onClose();
+    router.push("/fainalprice");
   };
 
   return (
-    <div className="fixed left-0 top-0 w-[100%] bg-white h-[100%]">
-      <div>
-        <img src="/icon/gif.gif" />
-        <div className="flex flex-col items-center">
-          <p>آگهی شما با موفقیت ارسال شد</p>
-          <p>لطفا منتظر باشید تا فروشندگان با شما تماس برقرار بکنند</p>
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-[300px]">
+        <img src="/icon/gif.gif" className="w-full h-auto mb-4" />
+        <div className="flex flex-col items-center text-center">
+          <p className="mb-2 font-bold">آگهی شما با موفقیت ارسال شد</p>
+          <p className="text-sm mb-4">
+            لطفا منتظر باشید تا فروشندگان با شما تماس برقرار بکنند
+          </p>
           <button
-            onClick={closeHandeler}
-            className="bg-blue-500 w-[120px] p-2 text-white font-bold mt-4 rounded-lg text-sm"
+            onClick={handleButtonClick}
+            className="bg-blue-500 w-full py-2 text-white font-bold rounded-lg text-sm"
           >
             متوجه شدم
           </button>
